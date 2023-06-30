@@ -1,5 +1,9 @@
-<p>{{ question }}</p>
-
-<p>{{ question.id }}</p>
-
-<p>{{ question.pub_date }}</p>
+<h1>{{ question.question_text }}</h1>
+<p>id: {{ question.id }}</p>
+<p>pub_date: {{ question.pub_date }}</p>
+<strong>Choices:</strong>
+<ul>
+{% for choice in question.choice_set.all %}
+    <li>{{ choice.choice_text }}</li>
+{% endfor %}
+</ul>
